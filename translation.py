@@ -51,13 +51,13 @@ def dump_res(buf):
    
 ## post audio to server  使用百度语音进行识别
 def use_cloud(token):  
-    fp = wave.open('jingyesi.wav', 'rb')
-    #fp = wave.open('vad_0 00_00_04-00_00_11.wav', 'rb') #在此修改文件名
+    fp = wave.open('jingyesi.wav', 'rb')	 #在此修改文件名
+    #fp = wave.open('vad_0 00_00_04-00_00_11.wav', 'rb')
     nf = fp.getnframes()  
     f_len = nf * 2 
     audio_data = fp.readframes(nf)  
    
-    cuid = "B8-88-E3-33-03-2F" #my PC  MAC  
+    cuid = "xxxx" #my PC  MAC  请加mac地址
     srv_url = 'http://vop.baidu.com/server_api' + '?cuid=' + cuid + '&token=' + token  
     http_header = [  
         'Content-Type: audio/pcm; rate=8000',  
